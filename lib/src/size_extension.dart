@@ -1,12 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 import 'screen_util.dart';
 
 extension SizeExtension on num {
   ///[ScreenUtil.setWidth]
-  double get w => ScreenUtil().setWidth(this);
+  double get w => kIsWeb ? this.toDouble() : ScreenUtil().setWidth(this);
 
   ///[ScreenUtil.setHeight]
   double get h => ScreenUtil().setHeight(this);
