@@ -10,7 +10,7 @@ extension SizeExtension on num {
   double get w => kIsWeb ? this.toDouble() : ScreenUtil().setWidth(this);
 
   ///[ScreenUtil.setHeight]
-  double get h => ScreenUtil().setHeight(this);
+  double get h => kIsWeb ? this.toDouble() : ScreenUtil().setHeight(this);
 
   ///[ScreenUtil.radius]
   double get r => ScreenUtil().radius(this);
@@ -22,7 +22,7 @@ extension SizeExtension on num {
   double get dm => ScreenUtil().diameter(this);
 
   ///[ScreenUtil.setSp]
-  double get sp => ScreenUtil().setSp(this);
+  double get sp => kIsWeb ? this.toDouble() : ScreenUtil().setSp(this);
 
   ///smart size :  it check your value - if it is bigger than your value it will set your value
   ///for example, you have set 16.sm() , if for your screen 16.sp() is bigger than 16 , then it will set 16 not 16.sp()
